@@ -1,0 +1,24 @@
+{
+  "name": "intro-to-express",
+  "version": "1.0.0",
+  "description": "lesson: introduction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DannyJaJr/intro-to-Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DannyJaJr/intro-to-Express/issues"
+  },
+  "homepage": "https://github.com/DannyJaJr/intro-to-Express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
