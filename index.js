@@ -66,10 +66,14 @@ app.get('/', function(req, res) {
     // send a response at the end
     res.send('Hello World!');
 });
-const sei = (req, res) => {
-    res.send('SEI 412');
-}
-app.get('/sei', sei);
+// const sei = (req, res) => {
+//     res.send('SEI 412');
+// }
+// app.get('/sei', sei);
+
+  
+
+
 app.get('/rockets', (req, res) => {
     // access an API and return some data
     axios.get('https://api.spacexdata.com/v3/rockets')
@@ -84,6 +88,29 @@ app.get('/rockets', (req, res) => {
         console.log(error);
     })
 })
+//or app.get('/greet/:name', (req, res) => {
+app.get('/:name', (req, res) => {
+    console.log(req.params);
+    res.send(`Hello ${req.params.name}`);
+  });
+
+
+
+      app.get('/github/:username', (req, res) => {
+        const { username } = req.params; // destructuring
+        axios.get(`https://api.github.com/users/${username}`)
+        .then(response => {
+            console.log(response.data);
+            res.json(response.data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    });
+
+
+
+
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server is listening on ${PORT} 🎧`);
